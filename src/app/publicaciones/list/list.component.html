@@ -1,0 +1,78 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Publicaciones</h4>
+                <p class="card-category">Sistema para realizar publicaciones</p>
+                <div class="row">
+                    <div class="col-12">
+                        <button mat-raised-button class="btn btn-round btn-sm pull-right">
+                            <i class="material-icons">add</i>
+                            <a href="/publicaciones/create" title="crear">crear</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="typography">
+                    <div class="card-title">
+                        <h2> Publicaciones</h2>
+                    </div>
+                    <table class="table">
+
+
+                        <th>Nombre</th>
+                        <th>Texto</th>
+                        <th>Prioridad</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th></th>
+                        <th></th>
+
+                        <tr *ngFor="let publicacion of  publicaciones">
+
+
+
+                            <td>{{publicacion.pubNombre}}
+                                    
+                                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" 
+                                    class="form-control" size="10" required>              
+                            </td>
+                        
+                            <td>{{publicacion.pubTexto}}
+                                    <input type="text" id="Texto" name="Texto" placeholder="Texto" 
+                                    class="form-control" size="10" required>          
+                            </td>
+                            <td>{{publicacion.pubPrioridad}}
+                                    <input type="text" id="Prioridad" name="Prioridad" placeholder="Prioridad" 
+                                    class="form-control" size="10" required>    
+                            </td>
+                            <td>{{publicacion.pubFecha}}
+                            </td>
+                            <td>{{publicacion.pubTipo}}
+                                    <input type="text" id="Tipo" name="Tipo" placeholder="Tipo" 
+                                    class="form-control" size="10" required>    
+                            </td>
+
+                            
+                            
+
+                            <td>
+                                <button value="Actualizar" title="Actualizar" class="form-control" (click)="crearOActualizar(publicacion)"><i class="material-icons">cached
+                                    </i> <div *ngIf="click", table></div></button>
+                            </td>
+                            <td>
+                               
+                                <button value="Eliminar" title="Eliminar" class="form-control" (click)="delatePublicaciones(publicacion)"  ><i  class="material-icons" >delete_sweep
+                                    </i></button>
+                                    
+                            </td>
+                             
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  

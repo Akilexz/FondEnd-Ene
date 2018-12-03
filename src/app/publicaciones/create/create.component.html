@@ -1,0 +1,145 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Publicaciones</h4>
+                <p class="card-category">Sistema para realizar publicaciones</p>
+                <div class="row">
+                    <div class="subitem col-lg-6 rowup col-md-3 col-sm-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div id="typography">
+                    <div class="card-body">
+                        <div id="typography">
+                            <script src="validar.js"></script>
+                            <div class="table">
+                                <div class="col-12">
+                                    
+                                        <th>
+                                            Nombre
+                                            
+                                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" 
+                                              class="form-control" size="50" required>
+                                        </th>
+                                        <th>
+                                            <div style="margin-left: 40px"> Prioridad</div>
+                                            <div style="margin-left: 40px">
+                                                <select id="lista " name="Prioridad" class="form-control">
+                                                    <option value="Alta" class="btn btn-danger">Alta</option>
+                                                    <option value="Media" class="btn btn-warning">Media</option>
+                                                    <option value="Baja" class="btn btn-info">Baja</option>
+                                                </select>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div style="margin-left: 60px">Fecha</div>
+                                            <div style="margin-left: 60px">
+                                                <p-calendar [(ngModel)]='date' [inline]="false"></p-calendar>
+                                            </div>
+                                        </th>
+
+
+
+                                        <div class="col-12">
+                                            <th>
+                                                Texto
+                                                <input type="text" id="Texto" name="Texto" 
+                                                    pInputText class="form-control" size="80" placeholder="Descripcion"
+                                                    required>
+
+                                            </th>
+
+                                            <th>
+
+                                                <div style="margin-left: 40px"> Tipo</div>
+                                                <div style="margin-left: 40px">
+
+
+                                                    <select id="lista " name="lista" class="form-control">
+                                                        <option value="normal" class="btn btn-danger">normal</option>
+                                                        <option value="urgente" class="btn btn-success">urgente</option>
+                                                        <option value="atrasado" class="btn btn-danger">atrasado</option>
+                                                        <option value="importante" class="btn btn-link">importante</option>
+                                                    </select>
+
+
+
+
+                                                </div>
+
+                                            </th>
+
+                                            <th>
+                                                <div style="margin-left: 40px">Seleccione Destino</div>
+
+                                                <div style="margin-left: 40px">
+
+                                                    <select id="lista " name="lista" class="form-control">
+                                                        <option value="facebook">facebook</option>
+                                                        <option value="Gmail">Gmail</option>
+                                                        <option value="youtube">youtube</option>
+
+                                                    </select>
+
+                                                </div>
+                                            </th>
+                                        </div>
+
+
+
+
+
+
+
+                                        <tr *ngFor="let publicacion of  publicacion">
+
+
+                                            <td>{{ publicacion.pubNombre}}
+                                            </td>
+                                            <td>{{publicacion.pubTexto}}
+                                            </td>
+                                            <td>{{publicacion.pubPrioridad}}
+                                            </td>
+                                            <td>{{publicacion.pubFecha}}
+                                            </td>
+                                            <td>{{publicacion.pubTipo}}
+                                            </td>
+                                            <td>{{publicacion.pubEstado}}
+                                            </td>
+
+                                        </tr>
+
+                                    
+                                    <title>cambiando option</title>
+                                    <style type="text/css">
+                                        OPTION {
+                                            font-family: Verdana, Arial;
+                                            font-size: 12px;
+                                            background-color: #e9e9e9;
+                                        }
+                                    </style>
+                                    <table>
+                                        <th>
+                                            <table>
+                                                <button type="button" (click)="AceptarOrUpdate()" class="btn btn-round btn-warning btn-Aceptar"
+                                                    title="Aceptar">
+                                                    
+                                                    <a href="/multimedia/multimediaCreate" title="Aceptar" role="alert">Aceptar</a>
+                                                </button>
+                                            </table>
+                                        </th>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
